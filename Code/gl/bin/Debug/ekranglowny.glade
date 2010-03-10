@@ -1,0 +1,339 @@
+<?xml version="1.0"?>
+<interface>
+  <requires lib="gtk+" version="2.16"/>
+  <!-- interface-naming-policy project-wide -->
+  <object class="GtkWindow" id="window1">
+    <child>
+      <object class="GtkFixed" id="fixed1">
+        <property name="visible">True</property>
+        <child>
+          <object class="GtkLabel" id="HelloLabel">
+            <property name="width_request">215</property>
+            <property name="height_request">20</property>
+            <property name="visible">True</property>
+            <property name="label" translatable="yes">Witaj, &lt;imi&#x119;_u&#x17C;ytkownika&gt;</property>
+            <attributes>
+              <attribute name="foreground" value="#000000000000"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="x">14</property>
+            <property name="y">39</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="AddTopicButton">
+            <property name="label" translatable="yes">Dodaj temat</property>
+            <property name="width_request">107</property>
+            <property name="height_request">32</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+          </object>
+          <packing>
+            <property name="x">19</property>
+            <property name="y">370</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="RemoveTopicButton">
+            <property name="label" translatable="yes">Usu&#x144; temat</property>
+            <property name="width_request">107</property>
+            <property name="height_request">32</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+          </object>
+          <packing>
+            <property name="x">423</property>
+            <property name="y">370</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="EditTopicButton">
+            <property name="label" translatable="yes">Edytuj temat</property>
+            <property name="width_request">107</property>
+            <property name="height_request">32</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+          </object>
+          <packing>
+            <property name="x">184</property>
+            <property name="y">370</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkScrolledWindow" id="TopicsContainer">
+            <property name="width_request">677</property>
+            <property name="height_request">243</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="hscrollbar_policy">automatic</property>
+            <property name="vscrollbar_policy">automatic</property>
+            <child>
+              <object class="GtkTable" id="table1">
+                <property name="visible">True</property>
+                <property name="n_rows">5</property>
+                <property name="n_columns">5</property>
+                <child>
+                  <placeholder/>
+                </child>
+                <child>
+                  <placeholder/>
+                </child>
+                <child>
+                  <placeholder/>
+                </child>
+                <child>
+                  <placeholder/>
+                </child>
+                <child>
+                  <placeholder/>
+                </child>
+                <child>
+                  <placeholder/>
+                </child>
+                <child>
+                  <placeholder/>
+                </child>
+                <child>
+                  <placeholder/>
+                </child>
+                <child>
+                  <placeholder/>
+                </child>
+                <child>
+                  <placeholder/>
+                </child>
+                <child>
+                  <placeholder/>
+                </child>
+                <child>
+                  <placeholder/>
+                </child>
+                <child>
+                  <placeholder/>
+                </child>
+                <child>
+                  <placeholder/>
+                </child>
+                <child>
+                  <placeholder/>
+                </child>
+                <child>
+                  <placeholder/>
+                </child>
+                <child>
+                  <placeholder/>
+                </child>
+                <child>
+                  <placeholder/>
+                </child>
+                <child>
+                  <placeholder/>
+                </child>
+                <child>
+                  <placeholder/>
+                </child>
+                <child>
+                  <placeholder/>
+                </child>
+                <child>
+                  <placeholder/>
+                </child>
+                <child>
+                  <placeholder/>
+                </child>
+                <child>
+                  <placeholder/>
+                </child>
+                <child>
+                  <placeholder/>
+                </child>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="x">21</property>
+            <property name="y">100</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="TopicLabel">
+            <property name="width_request">104</property>
+            <property name="height_request">30</property>
+            <property name="visible">True</property>
+            <property name="label" translatable="yes">Twoje tematy:</property>
+            <attributes>
+              <attribute name="underline" value="True"/>
+              <attribute name="foreground" value="#000000000000"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="x">22</property>
+            <property name="y">71</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkViewport" id="MenuViewport">
+            <property name="width_request">717</property>
+            <property name="height_request">26</property>
+            <property name="visible">True</property>
+            <property name="resize_mode">queue</property>
+            <child>
+              <object class="GtkMenuBar" id="menubar1">
+                <property name="visible">True</property>
+                <child>
+                  <object class="GtkMenuItem" id="menuitem1">
+                    <property name="visible">True</property>
+                    <property name="label" translatable="yes">_File</property>
+                    <property name="use_underline">True</property>
+                    <child type="submenu">
+                      <object class="GtkMenu" id="menu1">
+                        <property name="visible">True</property>
+                        <child>
+                          <object class="GtkImageMenuItem" id="imagemenuitem1">
+                            <property name="label">gtk-new</property>
+                            <property name="visible">True</property>
+                            <property name="use_underline">True</property>
+                            <property name="use_stock">True</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkImageMenuItem" id="imagemenuitem2">
+                            <property name="label">gtk-open</property>
+                            <property name="visible">True</property>
+                            <property name="use_underline">True</property>
+                            <property name="use_stock">True</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkImageMenuItem" id="imagemenuitem3">
+                            <property name="label">gtk-save</property>
+                            <property name="visible">True</property>
+                            <property name="use_underline">True</property>
+                            <property name="use_stock">True</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkImageMenuItem" id="imagemenuitem4">
+                            <property name="label">gtk-save-as</property>
+                            <property name="visible">True</property>
+                            <property name="use_underline">True</property>
+                            <property name="use_stock">True</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkSeparatorMenuItem" id="separatormenuitem1">
+                            <property name="visible">True</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkImageMenuItem" id="imagemenuitem5">
+                            <property name="label">gtk-quit</property>
+                            <property name="visible">True</property>
+                            <property name="use_underline">True</property>
+                            <property name="use_stock">True</property>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkMenuItem" id="menuitem2">
+                    <property name="visible">True</property>
+                    <property name="label" translatable="yes">_Edit</property>
+                    <property name="use_underline">True</property>
+                    <child type="submenu">
+                      <object class="GtkMenu" id="menu2">
+                        <property name="visible">True</property>
+                        <child>
+                          <object class="GtkImageMenuItem" id="imagemenuitem6">
+                            <property name="label">gtk-cut</property>
+                            <property name="visible">True</property>
+                            <property name="use_underline">True</property>
+                            <property name="use_stock">True</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkImageMenuItem" id="imagemenuitem7">
+                            <property name="label">gtk-copy</property>
+                            <property name="visible">True</property>
+                            <property name="use_underline">True</property>
+                            <property name="use_stock">True</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkImageMenuItem" id="imagemenuitem8">
+                            <property name="label">gtk-paste</property>
+                            <property name="visible">True</property>
+                            <property name="use_underline">True</property>
+                            <property name="use_stock">True</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkImageMenuItem" id="imagemenuitem9">
+                            <property name="label">gtk-delete</property>
+                            <property name="visible">True</property>
+                            <property name="use_underline">True</property>
+                            <property name="use_stock">True</property>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkMenuItem" id="menuitem3">
+                    <property name="visible">True</property>
+                    <property name="label" translatable="yes">_View</property>
+                    <property name="use_underline">True</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkMenuItem" id="menuitem4">
+                    <property name="visible">True</property>
+                    <property name="label" translatable="yes">_Help</property>
+                    <property name="use_underline">True</property>
+                    <child type="submenu">
+                      <object class="GtkMenu" id="menu3">
+                        <property name="visible">True</property>
+                        <child>
+                          <object class="GtkImageMenuItem" id="imagemenuitem10">
+                            <property name="label">gtk-about</property>
+                            <property name="visible">True</property>
+                            <property name="use_underline">True</property>
+                            <property name="use_stock">True</property>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkViewport" id="StatusBarViewport">
+            <property name="width_request">717</property>
+            <property name="height_request">26</property>
+            <property name="visible">True</property>
+            <property name="resize_mode">queue</property>
+            <child>
+              <object class="GtkStatusbar" id="StatusBar">
+                <property name="visible">True</property>
+                <property name="spacing">2</property>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="y">441</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>
