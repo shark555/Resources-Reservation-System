@@ -10,8 +10,10 @@ public class GUIAbout{
 	[Glade.Widget]
        Button OKbutton;
 	
-	//[Glade.Widget]
-	//	Window window;
+	[Glade.Widget]
+	Window AboutWindow;
+	
+	
 	
 	public GUIAbout (){
 		Application.Init ();		
@@ -31,12 +33,15 @@ public class GUIAbout{
 	
 	// Connect the Signals defined in Glade
 	private void OnWindowDeleteEvent (object sender, DeleteEventArgs a){
+		
 		Application.Quit ();
 		a.RetVal = true;
 	}
 
 	private void OnPressButtonEvent( object o, EventArgs e){
 		//window.Destroy(); -> rzuca wyjątek
-		OnWindowDeleteEvent(this, new DeleteEventArgs());
+		///OnWindowDeleteEvent(this, new DeleteEventArgs());
+		AboutWindow.Destroy();
+		
     }
 }

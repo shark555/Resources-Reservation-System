@@ -1,10 +1,16 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" ctype="Workspace" />
-  <MonoDevelop.Ide.Workbench ctype="Workbench">
+  <MonoDevelop.Ide.Workbench ActiveDocument="gl/Main.cs" ctype="Workbench">
+    <Files>
+      <File FileName="gl/Main.cs" Line="38" Column="24" />
+      <File FileName="gl/About.cs" Line="16" Column="2" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
-        <State expanded="True" selected="True">
-          <Node name="gl" expanded="True" />
+        <State expanded="True">
+          <Node name="gl" expanded="True">
+            <Node name="Main.cs" selected="True" />
+          </Node>
         </State>
       </Pad>
       <Pad Id="ClassPad">

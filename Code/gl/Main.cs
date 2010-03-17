@@ -9,6 +9,9 @@ public class GUIMain{
 	
 	[Glade.Widget]
 		ImageMenuItem m_quit;
+	
+	[Glade.Widget]
+		Window MainWindow;
 			
 	public static void Main (string[] args){
 		new GUIMain (args);
@@ -32,6 +35,7 @@ public class GUIMain{
 	
 	// Connect the Signals defined in Glade
 	private void OnWindowDeleteEvent (object sender, DeleteEventArgs a){
+		MainWindow.Destroy();
 		Application.Quit ();
 		a.RetVal = true;
 	}
