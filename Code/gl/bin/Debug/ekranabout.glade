@@ -2,7 +2,7 @@
 <glade-interface>
   <!-- interface-requires gtk+ 2.6 -->
   <!-- interface-naming-policy toplevel-contextual -->
-  <widget class="GtkWindow" id="window1">
+  <widget class="GtkWindow" id="AboutWindow">
     <property name="visible">True</property>
     <property name="title" translatable="yes">About</property>
     <property name="window_position">center</property>

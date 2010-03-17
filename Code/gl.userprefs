@@ -1,15 +1,10 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" ctype="Workspace" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="gl/Main.cs" ctype="Workbench">
-    <Files>
-      <File FileName="gl/Main.cs" Line="44" Column="1" />
-    </Files>
+  <MonoDevelop.Ide.Workbench ctype="Workbench">
     <Pads>
       <Pad Id="ProjectPad">
-        <State expanded="True">
-          <Node name="gl" expanded="True">
-            <Node name="Main.cs" selected="True" />
-          </Node>
+        <State expanded="True" selected="True">
+          <Node name="gl" expanded="True" />
         </State>
       </Pad>
       <Pad Id="ClassPad">
@@ -17,4 +12,7 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService>
 </Properties>

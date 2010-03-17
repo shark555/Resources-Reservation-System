@@ -2,61 +2,41 @@ using System;
 using Gtk;
 using Glade;
 
-public class GUIAbout
-{
-	public static void Main (string[] args)
-	{
-		new GUIAbout (args);
-	}
-
-	public	GUIAbout (string[] args)
-	{
-		Application.Init ();
-		
-		
-		
-		Glade.XML gxml = new Glade.XML ("ekranabout.glade", "window1", null);
-		gxml.Autoconnect (this);
-		
-		OKbutton.Clicked += OnPressButtonEvent;
-		versionLabel.Text = "Wersja 0.0.0.0.1";	
-	
-		Application.Run ();
-	}
-
-	// Connect the Signals defined in Glade
-	private void OnWindowDeleteEvent (object sender, DeleteEventArgs a)
-	{
-		Application.Quit ();
-		a.RetVal = true;
-	}
-	
-//	 [Glade.Widget]
-//       Button button1;
-//	
-//	[Glade.Widget]
-//       Image image1;
+public class GUIAbout{
 	
 	[Glade.Widget]
        Label versionLabel;	
 	
 	[Glade.Widget]
-       Button OKbutton;	
+       Button OKbutton;
 	
+	//[Glade.Widget]
+	//	Window window;
 	
+	public GUIAbout (){
+		Application.Init ();		
+		
+		Glade.XML gxml = new Glade.XML ("ekranabout.glade", "AboutWindow", null);
+		gxml.Autoconnect (this);
+	
+		setEvents();
+		
+		Application.Run ();
+	}
 
-	public void OnPressButtonEvent( object o, EventArgs e)
-        {
-		
-		
-		Application.Quit();
-		
-		
-        }
+	private void setEvents(){
+		OKbutton.Clicked += OnPressButtonEvent;
+		versionLabel.Text = "Wersja 0.0.0.0.1";
+	}
 	
-	
-	
+	// Connect the Signals defined in Glade
+	private void OnWindowDeleteEvent (object sender, DeleteEventArgs a){
+		Application.Quit ();
+		a.RetVal = true;
+	}
 
-	
+	private void OnPressButtonEvent( object o, EventArgs e){
+		//window.Destroy(); -> rzuca wyjątek
+		OnWindowDeleteEvent(this, new DeleteEventArgs());
+    }
 }
-
