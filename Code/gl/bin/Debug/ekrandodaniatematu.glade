@@ -1,0 +1,165 @@
+<?xml version="1.0"?>
+<glade-interface>
+  <!-- interface-requires gtk+ 2.16 -->
+  <!-- interface-naming-policy project-wide -->
+  <widget class="GtkWindow" id="AddTopicWindow">
+    <property name="title" translatable="yes">Dodaj temat</property>
+    <child>
+      <widget class="GtkFixed" id="fixed1">
+        <property name="visible">True</property>
+        <child>
+          <widget class="GtkLabel" id="UserNameLabel">
+            <property name="width_request">237</property>
+            <property name="height_request">22</property>
+            <property name="visible">True</property>
+            <property name="label" translatable="yes">Zg&#x142;aszaj&#x105;cy: &lt;imi&#x119; u&#x17C;ytkownika&gt;</property>
+          </widget>
+          <packing>
+            <property name="x">6</property>
+            <property name="y">19</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="GtkLabel" id="UserStatus">
+            <property name="width_request">231</property>
+            <property name="height_request">20</property>
+            <property name="visible">True</property>
+            <property name="label" translatable="yes">Status: &lt;wyk&#x142;adowca / student&gt;</property>
+          </widget>
+          <packing>
+            <property name="x">6</property>
+            <property name="y">42</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="GtkLabel" id="TopicLabel">
+            <property name="width_request">57</property>
+            <property name="height_request">20</property>
+            <property name="visible">True</property>
+            <property name="label" translatable="yes">Temat:</property>
+          </widget>
+          <packing>
+            <property name="x">6</property>
+            <property name="y">80</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="GtkEntry" id="topic">
+            <property name="width_request">531</property>
+            <property name="height_request">26</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="invisible_char">&#x25CF;</property>
+          </widget>
+          <packing>
+            <property name="x">65</property>
+            <property name="y">75</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="GtkCalendar" id="CalendarFrom">
+            <property name="width_request">273</property>
+            <property name="height_request">162</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="year">2010</property>
+            <property name="month">2</property>
+            <property name="day">20</property>
+          </widget>
+          <packing>
+            <property name="x">17</property>
+            <property name="y">183</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="GtkCalendar" id="CalendarTo">
+            <property name="width_request">273</property>
+            <property name="height_request">162</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="year">2010</property>
+            <property name="month">2</property>
+            <property name="day">20</property>
+          </widget>
+          <packing>
+            <property name="x">313</property>
+            <property name="y">183</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="GtkLabel" id="DateLabel">
+            <property name="width_request">117</property>
+            <property name="height_request">20</property>
+            <property name="visible">True</property>
+            <property name="label" translatable="yes">Termin realizacji:</property>
+          </widget>
+          <packing>
+            <property name="x">16</property>
+            <property name="y">124</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="GtkLabel" id="FromLabel">
+            <property name="width_request">28</property>
+            <property name="height_request">20</property>
+            <property name="visible">True</property>
+            <property name="label" translatable="yes">Od:</property>
+          </widget>
+          <packing>
+            <property name="x">16</property>
+            <property name="y">154</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="GtkLabel" id="ToLabel">
+            <property name="width_request">30</property>
+            <property name="height_request">20</property>
+            <property name="visible">True</property>
+            <property name="label" translatable="yes">Do:</property>
+          </widget>
+          <packing>
+            <property name="x">315</property>
+            <property name="y">154</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="GtkHButtonBox" id="DecisionBox">
+            <property name="width_request">213</property>
+            <property name="height_request">39</property>
+            <property name="visible">True</property>
+            <child>
+              <widget class="GtkButton" id="OKButton">
+                <property name="label" translatable="yes">Dodaj</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+              </widget>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkButton" id="CancelButton">
+                <property name="label" translatable="yes">Anuluj</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+              </widget>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </widget>
+          <packing>
+            <property name="x">193</property>
+            <property name="y">362</property>
+          </packing>
+        </child>
+      </widget>
+    </child>
+  </widget>
+</glade-interface>

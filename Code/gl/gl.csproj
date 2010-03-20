@@ -38,9 +38,11 @@
     <Reference Include="pango-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AssemblyInfo.cs" />
-    <Compile Include="About.cs" />
+    <Compile Include="GUIAbout.cs" />
+    <Compile Include="GUILogin.cs" />
+    <Compile Include="GUIMain.cs" />
     <Compile Include="Main.cs" />
+    <Compile Include="GUIAddTopic.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

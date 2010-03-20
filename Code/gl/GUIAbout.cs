@@ -8,7 +8,7 @@ public class GUIAbout{
        	Label versionLabel;	
 	
 	[Glade.Widget]
-       	Button OKbutton;
+       	Button OKButton;
 	
 	[Glade.Widget]
 		Window AboutWindow;
@@ -21,21 +21,21 @@ public class GUIAbout{
 	
 		setEvents();
 		
-		Application.Run ();
+		Application.Run();
 	}
 
 	private void setEvents(){
-		OKbutton.Clicked += OnPressButtonEvent;
+		OKButton.Clicked += OnPressButtonEvent;
 		versionLabel.Text = "Wersja 0.0.0.0.1";
 	}
 	
 	// Connect the Signals defined in Glade
 	private void OnWindowDeleteEvent(object sender, DeleteEventArgs a){
-		Application.Quit();
+		AboutWindow.Destroy();
 		a.RetVal = true;
 	}
 
 	private void OnPressButtonEvent(object o, EventArgs e){
-		AboutWindow.Destroy();
+		OnWindowDeleteEvent(this, new DeleteEventArgs());
     }
 }
