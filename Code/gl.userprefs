@@ -1,15 +1,18 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" ctype="Workspace" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="gl/Main.cs" ctype="Workbench">
+  <MonoDevelop.Ide.Workbench ActiveDocument="gl/GUIMain.cs" ctype="Workbench">
     <Files>
-      <File FileName="gl/Main.cs" Line="38" Column="24" />
-      <File FileName="gl/About.cs" Line="16" Column="2" />
+      <File FileName="gl/GUIAbout.cs" Line="24" Column="18" />
+      <File FileName="gl/GUILogin.cs" Line="20" Column="19" />
+      <File FileName="gl/GUIMain.cs" Line="45" Column="41" />
+      <File FileName="gl/Main.cs" Line="7" Column="19" />
+      <File FileName="gl/GUIAddTopic.cs" Line="15" Column="2" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Node name="gl" expanded="True">
-            <Node name="Main.cs" selected="True" />
+            <Node name="GUIMain.cs" selected="True" />
           </Node>
         </State>
       </Pad>
