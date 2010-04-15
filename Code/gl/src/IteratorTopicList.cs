@@ -1,5 +1,5 @@
 using System;
 
-public interface IteratorTopicList{
+public interface IteratorTopicList : Iterator<Topic>{
 	
 }

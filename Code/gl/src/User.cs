@@ -2,8 +2,20 @@ using System;
 
 abstract public class User{
 		
-	private int status;	//0 - student, 1 - wykladowca, 2 - admin
-	private string imie, nazwisko;
+	private int status{	//0 - student, 1 - wykladowca, 2 - admin
+		get;
+		set;
+	}
+	
+	private string imie{
+		get;
+		set;
+	}
+	
+	private string nazwisko{
+		get;
+		set;
+	}
 	
 	public User(){
 		status = 0;
@@ -25,11 +37,4 @@ abstract public class User{
 		if ((!String.Equals(nazwisko, nazwiskoNew) && !String.IsNullOrEmpty(nazwiskoNew)))
 	    	nazwisko = nazwiskoNew;
 	}
-	
-	public int getStatus(){	return status;}
-	public void setStatus(int nowy){	status = nowy;}
-	public string getImie(){	return imie;}
-	public void setImie(string nowe){	imie = nowe;}
-	public string getNazwisko(){	return nazwisko;}
-	public void setNazwisko(string nowe){	nazwisko = nowe;}
 }

@@ -1,5 +1,5 @@
 using System;
 
-public interface IteratorUserList{
-	
+public interface IteratorUserList : Iterator<User>{
+	int changeStatus(int index);
 }

@@ -128,6 +128,12 @@
 - reservedBy : Student</string>
      </void>
     </void>
+    <void property="methods">
+     <void property="text">
+      <string>+ setDateFrom() : void
++ setDateTo() : void</string>
+     </void>
+    </void>
     <void property="name">
      <void property="text">
       <string>Topic</string>
@@ -427,7 +433,6 @@ nie ściągamy całej bazy!</string>
      <void property="text">
       <string>+ searchUser() : int
 + deleteUser() : int 
-+ changeUserState() : int
 + showProjectsList() : void
 + changeTopic() : int
 + addTopic(): int

@@ -1,24 +1,21 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" ctype="Workspace" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="gl/Admin.cs" ctype="Workbench">
+  <MonoDevelop.Ide.Workbench ActiveDocument="gl/src/TopicList.cs" ctype="Workbench">
     <Files>
-      <File FileName="gl/Main.cs" Line="8" Column="3" />
-      <File FileName="gl/User.cs" Line="21" Column="33" />
-      <File FileName="gl/Topic.cs" Line="8" Column="3" />
-      <File FileName="gl/Admin.cs" Line="18" Column="15" />
-      <File FileName="gl/Wykladowca.cs" Line="8" Column="3" />
-      <File FileName="gl/Student.cs" Line="8" Column="3" />
-      <File FileName="gl/TopicList.cs" Line="19" Column="39" />
-      <File FileName="gl/Iterator.cs" Line="4" Column="3" />
-      <File FileName="gl/IteratorTopicList.cs" Line="5" Column="3" />
-      <File FileName="gl/IteratorUserList.cs" Line="5" Column="3" />
+      <File FileName="gl/src/Admin.cs" Line="30" Column="32" />
+      <File FileName="gl/src/UserList.cs" Line="29" Column="3" />
+      <File FileName="gl/src/DBQuery.cs" Line="13" Column="12" />
+      <File FileName="gl/src/User.cs" Line="27" Column="3" />
+      <File FileName="gl/src/Wykladowca.cs" Line="19" Column="39" />
+      <File FileName="gl/src/TopicList.cs" Line="21" Column="3" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Node name="gl" expanded="True">
-            <Node name="GUI" expanded="True" />
-            <Node name="Admin.cs" selected="True" />
+            <Node name="src" expanded="True">
+              <Node name="TopicList.cs" selected="True" />
+            </Node>
           </Node>
         </State>
       </Pad>

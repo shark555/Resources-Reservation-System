@@ -1,6 +1,6 @@
 using System;
 
-public class UserList{
+public class UserList : IteratorUserList{
 		
 	static private UserList instance = null;
 	
@@ -33,4 +33,37 @@ public class UserList{
 	}
 	
 	static public UserList getInstance(){	return instance;}
+	
+	//z interfejsu iteratora
+	public int getCurrentIndex(){
+		return 0;
+	}
+	
+	public User next(){
+		return new User();
+	}
+	
+	public User prev(){
+		return new User();
+	}
+	
+	public User head(){
+		return new User();
+	}
+	
+	public User current(){
+		return new User();
+	}
+	
+	public User tail(){
+		return new User();
+	}
+	
+	public User getByIndex(int index){
+		return new User();
+	}
+	
+	public int changeStatus(int index){
+		return 0;
+	}
 }

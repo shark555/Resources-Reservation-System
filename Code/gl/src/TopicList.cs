@@ -1,8 +1,9 @@
 using System;
 
-public class TopicList{
-		
+public class TopicList : IteratorTopicList{
+	
 	static private TopicList instance = null;
+	
 	
 	public TopicList(){
 		instance = this;
@@ -44,6 +45,35 @@ public class TopicList{
 	public void showProjectsList(){
 			
 	}
-	
+
 	static public TopicList getInstance(){	return instance;}
+	
+	//z interfejsu iteratora
+	public int getCurrentIndex(){
+		return 0;
+	}
+	
+	public Topic next(){
+		return new Topic();
+	}
+	
+	public Topic prev(){
+		return new Topic();
+	}
+	
+	public Topic head(){
+		return new Topic();
+	}
+	
+	public Topic current(){
+		return new Topic();
+	}
+	
+	public Topic tail(){
+		return new Topic();
+	}
+	
+	public Topic getByIndex(int index){
+		return new Topic();
+	}
 }
