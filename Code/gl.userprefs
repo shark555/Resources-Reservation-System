@@ -1,26 +1,35 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" ctype="Workspace" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="gl/src/TopicList.cs" ctype="Workbench">
+  <MonoDevelop.Ide.Workbench ActiveDocument="gl/src/Main.cs" ctype="Workbench">
     <Files>
-      <File FileName="gl/src/Admin.cs" Line="30" Column="32" />
-      <File FileName="gl/src/UserList.cs" Line="29" Column="3" />
-      <File FileName="gl/src/DBQuery.cs" Line="13" Column="12" />
-      <File FileName="gl/src/User.cs" Line="27" Column="3" />
-      <File FileName="gl/src/Wykladowca.cs" Line="19" Column="39" />
-      <File FileName="gl/src/TopicList.cs" Line="21" Column="3" />
+      <File FileName="gl/src/GUI/GUILogin.cs" Line="10" Column="29" />
+      <File FileName="gl/src/DBQuery.cs" Line="3" Column="1" />
+      <File FileName="gl/src/Admin.cs" Line="12" Column="20" />
+      <File FileName="gl/src/GUI/GUIMain.cs" Line="17" Column="33" />
+      <File FileName="gl/src/GUI/GUIAddTopic.cs" Line="9" Column="16" />
+      <File FileName="gl/src/GUI/GUIAbout.cs" Line="14" Column="20" />
+      <File FileName="gl/src/Topic.cs" Line="14" Column="14" />
+      <File FileName="gl/src/TopicList.cs" Line="54" Column="11" />
+      <File FileName="gl/src/UserList.cs" Line="20" Column="17" />
+      <File FileName="gl/src/Main.cs" Line="4" Column="24" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Node name="gl" expanded="True">
+            <Node name="References" expanded="True" />
             <Node name="src" expanded="True">
-              <Node name="TopicList.cs" selected="True" />
+              <Node name="GUI" expanded="True" />
+              <Node name="Main.cs" selected="True" />
             </Node>
           </Node>
         </State>
       </Pad>
       <Pad Id="ClassPad">
         <State expanded="True" selected="True" />
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>

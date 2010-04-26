@@ -1,0 +1,119 @@
+<?xml version="1.0"?>
+<glade-interface>
+  <!-- interface-requires gtk+ 2.6 -->
+  <!-- interface-naming-policy toplevel-contextual -->
+  <widget class="GtkWindow" id="LoginWindow">
+    <property name="visible">True</property>
+    <property name="title" translatable="yes">System rezerwacji zasob&#xF3;w - logowanie</property>
+    <property name="window_position">center</property>
+    <signal name="delete_event" handler="OnWindowDeleteEvent"/>
+    <child>
+      <widget class="GtkFixed" id="fixed1">
+        <property name="visible">True</property>
+        <child>
+          <widget class="GtkEntry" id="login">
+            <property name="width_request">150</property>
+            <property name="height_request">30</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="invisible_char">&#x25CF;</property>
+          </widget>
+          <packing>
+            <property name="x">137</property>
+            <property name="y">63</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="GtkEntry" id="password">
+            <property name="width_request">150</property>
+            <property name="height_request">30</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="invisible_char">&#x25CF;</property>
+          </widget>
+          <packing>
+            <property name="x">137</property>
+            <property name="y">98</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="GtkButton" id="OKButton">
+            <property name="label" translatable="yes">Okejkuj</property>
+            <property name="width_request">77</property>
+            <property name="height_request">27</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+          </widget>
+          <packing>
+            <property name="x">48</property>
+            <property name="y">140</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="GtkButton" id="CancelButton">
+            <property name="label" translatable="yes">Nie bangla</property>
+            <property name="width_request">83</property>
+            <property name="height_request">27</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+          </widget>
+          <packing>
+            <property name="x">181</property>
+            <property name="y">140</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="GtkLabel" id="LoginLabel">
+            <property name="width_request">61</property>
+            <property name="height_request">20</property>
+            <property name="visible">True</property>
+            <property name="label" translatable="yes">Login</property>
+          </widget>
+          <packing>
+            <property name="x">57</property>
+            <property name="y">69</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="GtkLabel" id="PassLabel">
+            <property name="width_request">60</property>
+            <property name="height_request">20</property>
+            <property name="visible">True</property>
+            <property name="label" translatable="yes">Has&#x142;o</property>
+          </widget>
+          <packing>
+            <property name="x">57</property>
+            <property name="y">105</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="GtkImage" id="logo">
+            <property name="width_request">150</property>
+            <property name="height_request">108</property>
+            <property name="visible">True</property>
+            <property name="pixbuf">shark150.jpg</property>
+          </widget>
+          <packing>
+            <property name="x">340</property>
+            <property name="y">41</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="GtkLabel" id="WelcomeLabel">
+            <property name="width_request">317</property>
+            <property name="height_request">37</property>
+            <property name="visible">True</property>
+            <property name="label" translatable="yes">Witamy w systemie rezerwacji zasob&#xF3;w.
+Zaloguj si&#x119; do swojego panelu u&#x17C;ytkownika:</property>
+          </widget>
+          <packing>
+            <property name="x">9</property>
+            <property name="y">11</property>
+          </packing>
+        </child>
+      </widget>
+    </child>
+  </widget>
+</glade-interface>

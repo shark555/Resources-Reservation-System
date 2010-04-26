@@ -8,9 +8,7 @@
     <ProjectGuid>{92E380FE-59DF-4F1E-AD76-188E8FA64905}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>gl</RootNamespace>
-    <AssemblyName>gl</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
-    <StartupObject>MainClass</StartupObject>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <DebugSymbols>true</DebugSymbols>
@@ -21,6 +19,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <PlatformTarget>x86</PlatformTarget>
+    <AssemblyName>System</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <DebugType>none</DebugType>
@@ -29,6 +28,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <PlatformTarget>x86</PlatformTarget>
+    <AssemblyName>gl</AssemblyName>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -65,7 +65,7 @@
   <ProjectExtensions>
     <MonoDevelop>
       <Properties>
-        <Deployment.LinuxDeployData scriptName="gl" />
+        <Deployment.LinuxDeployData scriptName="System" />
       </Properties>
     </MonoDevelop>
   </ProjectExtensions>

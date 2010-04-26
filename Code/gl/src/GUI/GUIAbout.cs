@@ -6,22 +6,16 @@ public class GUIAbout{
 	
 	[Glade.Widget]
        	Label versionLabel;	
-	
 	[Glade.Widget]
        	Button OKButton;
-	
 	[Glade.Widget]
 		Window AboutWindow;
 	
 	public GUIAbout(){
-		Application.Init();		
-		
-		Glade.XML gxml = new Glade.XML("ekranabout.glade", "AboutWindow", null);
+		Glade.XML gxml = new Glade.XML("../../src/GUI/Glade/ekranabout.glade", "AboutWindow", null);
 		gxml.Autoconnect(this);
 	
 		setEvents();
-		
-		Application.Run();
 	}
 
 	private void setEvents(){

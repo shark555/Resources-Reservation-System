@@ -2,9 +2,16 @@ using System;
 
 public class Topic{
 	
-	private string subject, name, dateFrom, dateTo, author, category;
-	private int status;	//0 - zarezerwowany, 1 - wolny, 2 - oczekujący na akceptację, 3 - usunięty
-	private Student reservedBy;
+	private string subject, dateFrom, dateTo, author, category;
+	public string name{
+		get;
+		set;
+	}
+	public int status{	//0 - zarezerwowany, 1 - wolny, 2 - oczekujący na akceptację, 3 - usunięty
+		get;
+		set;
+	}
+	private User reservedBy;
 	
 	public Topic(){
 		
@@ -17,7 +24,14 @@ public class Topic{
 	             string a_dateTo,
 	             string a_author,
 	             string a_category,
-	             Student a_reservedBy){
+	             User a_reservedBy){
+		subject = a_subject;
+		name = a_name;
+		dateFrom = a_dateFrom;
+		dateTo = a_dateTo;
+		author = a_author;
+		category = a_category;
+		reservedBy = a_reservedBy;
 		status = 0;
 	}
 	
@@ -28,6 +42,13 @@ public class Topic{
 	             string a_dateTo,
 	             string a_author,
 	             string a_category){
+		subject = a_subject;
+		name = a_name;
+		dateFrom = a_dateFrom;
+		dateTo = a_dateTo;
+		author = a_author;
+		category = a_category;
+		reservedBy = null;
 		status = 1;
 	}
 	
@@ -36,10 +57,32 @@ public class Topic{
 	             string a_name,
 	             string a_author,
 	             string a_category){
+		subject = a_subject;
+		name = a_name;
+		dateFrom = null;
+		dateTo = null;
+		author = a_author;
+		category = a_category;
+		reservedBy = null;
 		status = 2;
 		//wykladowca po akceptacji ustawia daty
 	}
 	
 	public void setDateFrom(string newDate){	dateFrom = newDate;}
 	public void setDateTo(string newDate){	dateTo = newDate;}
+	override public string ToString(){
+		string ret = subject + ": " + name + ".\nAutor: " + author + "\nOd: " + dateFrom + "\nDo: " + dateTo + "\nStatus: ";
+		switch (status){
+			case 0:	ret += "zarezerwowany.";
+					break;
+			case 1: ret += "wolny.";
+					break;
+			case 2:	ret += "oczekujący na akceptację.";
+					break;
+			case 3:	ret += "usunięty.";
+					break;
+		}
+		
+		return ret;
+	}
 }

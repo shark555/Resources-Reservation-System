@@ -4,6 +4,6 @@ using Gtk;
 public class MainClass{
 	
 	public static void Main(string[] args){
-		new GUILogin();	
+		new GUILogin();
 	}
 }

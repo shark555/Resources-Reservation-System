@@ -1,18 +1,18 @@
 using System;
 
-abstract public class User{
+public class User{
 		
-	private int status{	//0 - student, 1 - wykladowca, 2 - admin
+	public int status{	//0 - student, 1 - wykladowca, 2 - admin
 		get;
 		set;
 	}
 	
-	private string imie{
+	public string imie{
 		get;
 		set;
 	}
 	
-	private string nazwisko{
+	public string nazwisko{
 		get;
 		set;
 	}

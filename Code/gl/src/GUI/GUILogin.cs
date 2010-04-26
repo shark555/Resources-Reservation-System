@@ -6,17 +6,14 @@ public class GUILogin{
 	
 	[Glade.Widget]
        	Button OKButton;
-	
 	[Glade.Widget]
        	Button CancelButton;
-	
 	[Glade.Widget]
 		Window LoginWindow;
 	
 	public GUILogin(){
-		Application.Init ();		
-		
-		Glade.XML gxml = new Glade.XML("ekranlogowania.glade", "LoginWindow", null);
+		Application.Init();
+		Glade.XML gxml = new Glade.XML("../../src/GUI/Glade/ekranlogowania.glade", "LoginWindow", null);
 		gxml.Autoconnect(this);
 	
 		setEvents();
@@ -25,7 +22,7 @@ public class GUILogin{
 	}
 
 	private bool checkLogin(){
-		//sprawdzenie, czy w bazie jest login + hasło
+		//sprawdzenie, czy w bazie jest login + hasło		
 		return true;
 	}
 	

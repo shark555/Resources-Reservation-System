@@ -6,34 +6,18 @@ public class GUIMain{
 	
 	[Glade.Widget]
 		ImageMenuItem m_about;
-	
 	[Glade.Widget]
 		ImageMenuItem m_quit;
-	
 	[Glade.Widget]
 		Window MainWindow;
-	
 	[Glade.Widget]
 		Button AddTopic;
-	
-//	[Glade.Widget]
-//		Button EditTopic;
-//	
-//	[Glade.Widget]
-//		Button DeleteTopic;
-//	
-//	[Glade.Widget]
-//		Table TopicTable;
 
 	public GUIMain(){
-		Application.Init();
-		
-		Glade.XML gxml = new Glade.XML("ekranglowny.glade", "MainWindow", null);
+		Glade.XML gxml = new Glade.XML("../../src/GUI/Glade/ekranglowny.glade", "MainWindow", null);
 		gxml.Autoconnect(this);
 	
 		setEvents();
-		
-		Application.Run();
 	}
 
 	private void setEvents(){
@@ -44,7 +28,6 @@ public class GUIMain{
 	
 	// Connect the Signals defined in Glade
 	private void OnWindowDeleteEvent(object sender, DeleteEventArgs a){
-		MainWindow.Destroy();
 		Application.Quit();
 		a.RetVal = true;
 	}
