@@ -25,12 +25,15 @@
         <child>
           <widget class="GtkLabel" id="InfoLabel">
             <property name="width_request">237</property>
-            <property name="height_request">72</property>
+            <property name="height_request">172</property>
             <property name="visible">True</property>
             <property name="label" translatable="yes">System Rezerwacji Zasob&#xF3;w
 
 Autorzy:
-shark, h4b0, wyznawca
+Cezary B&#x142;ajszczak
+Mateusz Grela
+Dariusz P&#x142;awecki
+Rafa&#x142; Wa&#x142;kowski
 </property>
             <property name="justify">center</property>
           </widget>
@@ -41,7 +44,7 @@ shark, h4b0, wyznawca
         </child>
         <child>
           <widget class="GtkButton" id="OKButton">
-            <property name="label" translatable="yes">Ola Kala</property>
+            <property name="label" translatable="yes">OK</property>
             <property name="width_request">100</property>
             <property name="height_request">42</property>
             <property name="visible">True</property>
@@ -49,8 +52,8 @@ shark, h4b0, wyznawca
             <property name="receives_default">True</property>
           </widget>
           <packing>
-            <property name="x">71</property>
-            <property name="y">242</property>
+            <property name="x">58</property>
+            <property name="y">362</property>
           </packing>
         </child>
         <child>
@@ -61,8 +64,8 @@ shark, h4b0, wyznawca
             <property name="label" translatable="yes">wersja</property>
           </widget>
           <packing>
-            <property name="x">48</property>
-            <property name="y">211</property>
+            <property name="x">41</property>
+            <property name="y">316</property>
           </packing>
         </child>
       </widget>

@@ -1,6 +1,8 @@
 using System;
+using System.Collections.Generic;
+using System.Data;
 
-public class Admin{
+public class Admin : User{
 		
 	static private Admin instance = null;
 	
@@ -18,8 +20,17 @@ public class Admin{
 		return ret;
 	}
 	
-	private int connectSubjectToTeacher(Wykladowca teacher, string subject){
-		return 0;
+	public int connectSubjectToTeacher(string ID_Teacher, string ID_subject){
+		if (ID_Teacher != null && ID_subject != null){
+			string lista = " * FROM Diplomas;";
+			IDataReader reader = DBQuery.createQuery("SELECT", lista);
+			while(reader.Read()) {
+            	Console.WriteLine("Name: " + reader["ID"]);
+       		}
+			//DBQuery.CloseReader(reader);
+			return 0;
+		}else
+			return 1;
 	}
 	
 	private int deleteUser(int index){

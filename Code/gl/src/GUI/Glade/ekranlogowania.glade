@@ -38,7 +38,7 @@
         </child>
         <child>
           <widget class="GtkButton" id="OKButton">
-            <property name="label" translatable="yes">Okejkuj</property>
+            <property name="label" translatable="yes">Zaloguj</property>
             <property name="width_request">77</property>
             <property name="height_request">27</property>
             <property name="visible">True</property>
@@ -52,7 +52,7 @@
         </child>
         <child>
           <widget class="GtkButton" id="CancelButton">
-            <property name="label" translatable="yes">Nie bangla</property>
+            <property name="label" translatable="yes">Anuluj</property>
             <property name="width_request">83</property>
             <property name="height_request">27</property>
             <property name="visible">True</property>

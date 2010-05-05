@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.Data;
+
 public class UserList : IteratorUserList{
 		
 	static private UserList instance = null;
@@ -9,12 +11,32 @@ public class UserList : IteratorUserList{
 	public UserList(){
 		instance = this;
 		//dodanie do listy aktualnych użytkowników z bazy
+		lista = new List<User>();
+		curPos = 0;
+		string args = " * FROM Users";
+		IDataReader reader = DBQuery.createQuery("SELECT", args);
+		while (reader.Read()){
+			Console.WriteLine(reader["Name"] + " " + reader["Passwd"]);
+			lista.Add(new User(int.Parse(reader["Status"].ToString()), 
+			                   reader["Name"].ToString(), 
+			                   reader["Passwd"].ToString(), 
+			                   reader["Imie"].ToString(), 
+			                   reader["Nazwisko"].ToString()));
+		}
+		Console.WriteLine(lista.Count);
+		DBQuery.CloseReader(reader);
 	}
-		
+	
 	public int deleteUser(int index){
 		if (index < lista.Count && index > 0)
 			lista.RemoveAt(index);
 		return 0;
+	}
+	
+	public void setCurrentPos(string name){
+		for (int i = 0; i < lista.Count; i++)
+			if (lista[i].name.Equals(name))
+				curPos = i;
 	}
 	
 	//do zrobienia!

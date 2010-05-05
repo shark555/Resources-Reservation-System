@@ -20,7 +20,7 @@ public class GUIAbout{
 
 	private void setEvents(){
 		OKButton.Clicked += OnPressButtonEvent;
-		versionLabel.Text = "Wersja 0.0.0.0.1";
+		versionLabel.Text = "Wersja 0.3.2.7";
 	}
 	
 	// Connect the Signals defined in Glade

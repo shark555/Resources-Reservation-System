@@ -1,33 +1,34 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" ctype="Workspace" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="gl/src/User.cs" ctype="Workbench">
+  <MonoDevelop.Ide.Workbench ActiveDocument="gl/src/UserList.cs" ctype="Workbench">
     <Files>
-      <File FileName="gl/src/GUI/GUILogin.cs" Line="10" Column="29" />
-      <File FileName="gl/src/DBQuery.cs" Line="3" Column="1" />
-      <File FileName="gl/src/Admin.cs" Line="12" Column="20" />
-      <File FileName="gl/src/GUI/GUIMain.cs" Line="17" Column="33" />
-      <File FileName="gl/src/GUI/GUIAddTopic.cs" Line="9" Column="16" />
-      <File FileName="gl/src/GUI/GUIAbout.cs" Line="14" Column="20" />
-      <File FileName="gl/src/Topic.cs" Line="14" Column="26" />
-      <File FileName="gl/src/TopicList.cs" Line="56" Column="30" />
-      <File FileName="gl/src/UserList.cs" Line="5" Column="42" />
-      <File FileName="gl/src/Main.cs" Line="9" Column="2" />
-      <File FileName="gl/src/Wykladowca.cs" Line="4" Column="2" />
-      <File FileName="gl/src/User.cs" Line="23" Column="29" />
+      <File FileName="../../Projects/testMySQL/test.cs" Line="37" Column="8" />
+      <File FileName="gl/src/Admin.cs" Line="25" Column="39" />
+      <File FileName="gl/src/Proxy.cs" Line="13" Column="47" />
+      <File FileName="gl/src/DBQuery.cs" Line="28" Column="22" />
+      <File FileName="gl/src/Main.cs" Line="13" Column="31" />
+      <File FileName="gl/src/User.cs" Line="41" Column="92" />
+      <File FileName="gl/src/Wykladowca.cs" Line="3" Column="32" />
+      <File FileName="gl/src/GUI/GUILogin.cs" Line="65" Column="6" />
+      <File FileName="gl/src/UserList.cs" Line="15" Column="13" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Node name="gl" expanded="True">
-            <Node name="References" expanded="True" />
             <Node name="src" expanded="True">
-              <Node name="User.cs" selected="True" />
+              <Node name="GUI" expanded="True" />
+              <Node name="UserList.cs" selected="True" />
             </Node>
           </Node>
         </State>
       </Pad>
       <Pad Id="ClassPad">
-        <State expanded="True" selected="True" />
+        <State expanded="True">
+          <Node name="gl" expanded="True">
+            <Node name="Admin" expanded="True" selected="True" />
+          </Node>
+        </State>
       </Pad>
       <Pad Id="MonoDevelop.Debugger.WatchPad">
         <State />

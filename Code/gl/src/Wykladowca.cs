@@ -1,6 +1,6 @@
 using System;
 
-public class Wykladowca{
+public class Wykladowca : User{
 	
 	string przedmiot;
 	

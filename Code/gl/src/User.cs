@@ -7,6 +7,16 @@ public class User{
 		set;
 	}
 	
+	public string passwd{
+		get;
+		set;
+	}
+	
+	public string name{
+		get;
+		set;
+	}
+	
 	public string imie{
 		get;
 		set;
@@ -17,14 +27,21 @@ public class User{
 		set;
 	}
 	
+	public int id{
+		get;
+		set;
+	}
+	
 	public User(){
 		status = 0;
 		imie = "TestImie";
 		nazwisko = "TestNazwisko";
 	}
 	
-	public User(int a_status, string a_imie, string a_nazwisko){
+	public User(int a_status, string a_name, string a_passwd, string a_imie, string a_nazwisko){
 		status = a_status;
+		name = a_name;
+		passwd = a_passwd;
 		imie = a_imie;
 		nazwisko = a_nazwisko;
 	}
@@ -36,5 +53,9 @@ public class User{
 	    	imie = imieNew;
 		if ((!String.Equals(nazwisko, nazwiskoNew) && !String.IsNullOrEmpty(nazwiskoNew)))
 	    	nazwisko = nazwiskoNew;
+	}
+	
+	public override string ToString(){
+		return imie + ", " + nazwisko;
 	}
 }

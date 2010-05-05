@@ -12,12 +12,16 @@ public class GUIMain{
 		Window MainWindow;
 	[Glade.Widget]
 		Button AddTopic;
+	[Glade.Widget]
+		Label HelloLabel;
 
 	public GUIMain(){
 		Glade.XML gxml = new Glade.XML("../../src/GUI/Glade/ekranglowny.glade", "MainWindow", null);
 		gxml.Autoconnect(this);
 	
 		setEvents();
+		
+		HelloLabel.Text = "Witaj, " + UserList.getInstance().current().imie;
 	}
 
 	private void setEvents(){

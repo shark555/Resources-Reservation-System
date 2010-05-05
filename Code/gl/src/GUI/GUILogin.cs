@@ -1,6 +1,7 @@
 using System;
 using Gtk;
 using Glade;
+using System.Data;
 
 public class GUILogin{	
 	
@@ -10,6 +11,10 @@ public class GUILogin{
        	Button CancelButton;
 	[Glade.Widget]
 		Window LoginWindow;
+	[Glade.Widget]
+		Entry login;
+	[Glade.Widget]
+		Entry password;
 	
 	public GUILogin(){
 		Application.Init();
@@ -18,12 +23,28 @@ public class GUILogin{
 	
 		setEvents();
 		
+		password.Visibility = false;
+		
 		Application.Run();
 	}
 
 	private bool checkLogin(){
-		//sprawdzenie, czy w bazie jest login + hasło		
-		return true;
+		//sprawdzenie, czy w bazie jest login + hasło
+		string lista = " * FROM Users WHERE Name=\'";
+		lista += login.Text;
+		lista += "\' AND Passwd=\'";
+		lista += password.Text;
+		lista += "\';";
+		IDataReader reader = DBQuery.createQuery("SELECT", lista);
+		if (reader.Read()){
+			Console.WriteLine(reader["Name"] + " - " + reader["passwd"]);
+			UserList.getInstance().setCurrentPos(reader["name"].ToString());
+			DBQuery.CloseReader(reader);
+			return true;
+		}else{
+			DBQuery.CloseReader(reader);
+			return false;
+		}
 	}
 	
 	private void setEvents(){
@@ -43,6 +64,15 @@ public class GUILogin{
 			new GUIMain();
 		}else{
 			//informacja o błędnym logowaniu
+			Gtk.MessageDialog msgDialog = new Gtk.MessageDialog(null, 
+			                                                    DialogFlags.DestroyWithParent, 
+                                  								MessageType.Error,
+                                  								ButtonsType.Ok, 
+			                                                    "Błędne logowanie!");
+			int res = msgDialog.Run();
+			login.Text = "";
+			password.Text = "";
+			msgDialog.Destroy();
 		}
     }
 	
