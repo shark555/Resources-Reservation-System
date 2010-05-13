@@ -2,7 +2,23 @@ using System;
 
 public class Topic{
 	
-	private string subject, dateFrom, dateTo, author, category;
+	private string subject;
+	public string dateFrom{
+		get;
+		set;
+	}
+	public string dateTo{
+		get;
+		set;
+	}
+	public string category{
+		get;
+		set;
+	}
+	public string author{
+		get;
+		set;
+	}
 	public string name{
 		get;
 		set;
@@ -11,7 +27,10 @@ public class Topic{
 		get;
 		set;
 	}
-	private User reservedBy;
+	public User reservedBy{
+		get;
+		set;
+	}
 	
 	public Topic(){
 		

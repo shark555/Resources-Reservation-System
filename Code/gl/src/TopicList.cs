@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Data;
 
 public class TopicList : IteratorTopicList{
 	
@@ -8,13 +9,58 @@ public class TopicList : IteratorTopicList{
 	private List<Topic> lista;
 	
 	public TopicList(){
-		lista = null;
+		lista = new List<Topic>();
 		curPos = 0;
 		instance = this;
 	}
-	
+	//jeśli mamy usera reservedBy, to w bazie odpowiada on id = 1
 	public int addTopic(Topic addMe){
 		lista.Add(addMe);
+		string userNazwisko = addMe.author.Substring(0, addMe.author.IndexOf(' '));
+		string userImie = addMe.author.Substring(addMe.author.IndexOf(' ') + 1);
+		string userID = "";
+		string reservedByID = "";
+		
+		//pobranie id użytkownika
+		string param = " * FROM Users WHERE Imie=";
+		param += "\'" + userImie + "\' AND Nazwisko=";
+		param += "\'" + userNazwisko + "\';";
+		IDataReader reader = DBQuery.createQuery("SELECT", param);
+		if (reader.Read())
+			userID = reader["ID"].ToString();
+		else
+			Console.WriteLine("ERROR:" + param);
+		DBQuery.CloseReader(reader);
+		
+		Console.WriteLine(userID);
+		
+		//pobranie id reservedBy
+		if (addMe.reservedBy != null){
+			param = " * FROM User WHERE Imie=";
+			param += "\'" + addMe.reservedBy.imie + "\' AND Nazwisko=";
+			param += "\'" + addMe.reservedBy.nazwisko + "\';";
+			reader = DBQuery.createQuery("SELECT", param);
+			if (reader.Read())
+				reservedByID = reader["ID"].ToString();
+			else
+				Console.WriteLine("ERROR!" + param);
+			DBQuery.CloseReader(reader);
+		}else
+			reservedByID = "1";
+		
+		Console.WriteLine(reservedByID);
+		//dodanie tematu
+		param = " INTO Subjects(Topic, UserID, DateFrom, DateTo, ReservedBy, Cathegory) VALUES (";
+		param += "\'" + addMe.name + "\', ";
+		param += "\'" + userID + "\', ";
+		param += "\'" + addMe.dateFrom + "\', ";
+		param += "\'" + addMe.dateTo + "\', ";
+		param += "\'" + reservedByID + "\', ";
+		param += "\'" + addMe.category + "\'";
+		param += ");";
+		Console.WriteLine(param);
+		reader = DBQuery.createQuery("INSERT", param);
+		DBQuery.CloseReader(reader);
 		curPos++;
 		return 0;
 	}

@@ -28,8 +28,8 @@ public class DBQuery{
        	string connectionString =
           	"Server=localhost;" +
           	"Database=RRS;" +
-          	"User ID=h4b0;" +
-          	"Password=haslo;" +
+          	"User ID=root;" +
+          	"Password=newpwd;" +
           	"Pooling=false";
        	dbcon = new MySqlConnection(connectionString);
        	dbcon.Open();

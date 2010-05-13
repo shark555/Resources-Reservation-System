@@ -62,6 +62,7 @@ public class GUILogin{
 		if (checkLogin()){
 			LoginWindow.Destroy();
 			new GUIMain();
+			//new GUIAddTopic();
 		}else{
 			//informacja o błędnym logowaniu
 			Gtk.MessageDialog msgDialog = new Gtk.MessageDialog(null, 

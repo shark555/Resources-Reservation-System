@@ -22,6 +22,8 @@ public class GUIAddTopic{
 		gxml.Autoconnect(this);
 	
 		setEvents();
+		
+		AddTopicWindow.Show();
 	}
 	
 	private void setEvents(){
@@ -47,7 +49,7 @@ public class GUIAddTopic{
 			                                           "test",
 			                                           zglaszajacy));
 		}
-		if (zglaszajacy.status == 1){	//wykladowca
+		if (zglaszajacy.status >= 1){	//wykladowca lub admin
 			TopicList.getInstance().addTopic(new Topic("przedmiot", 
 			                                           topic.Text, 
 			                                           CalendarFrom.GetDate().ToString(),	
@@ -55,6 +57,16 @@ public class GUIAddTopic{
 			                                           zglaszajacy.nazwisko + " " + zglaszajacy.imie,
 			                                           "test"));
 		}
+		
+		Gtk.MessageDialog msgDialog = new Gtk.MessageDialog(null, 
+			                                                DialogFlags.DestroyWithParent, 
+                                  							MessageType.Info,
+                                  							ButtonsType.Ok, 
+			                                                "Dodano temat.");
+		int res = msgDialog.Run();
+		msgDialog.Destroy();
+		GUIMain.loadTopics();
+		OnWindowDeleteEvent(this, new DeleteEventArgs());
     }
 	
 	private void OnPressButtonCancelEvent(object o, EventArgs e){

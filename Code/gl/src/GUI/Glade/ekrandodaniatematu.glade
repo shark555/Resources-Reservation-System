@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <glade-interface>
   <!-- interface-requires gtk+ 2.16 -->
-  <!-- interface-naming-policy project-wide -->
+  <!-- interface-naming-policy toplevel-contextual -->
   <widget class="GtkWindow" id="AddTopicWindow">
     <property name="title" translatable="yes">Dodaj temat</property>
     <child>

@@ -105,22 +105,7 @@
               <widget class="GtkTable" id="TopicTable">
                 <property name="visible">True</property>
                 <property name="n_rows">5</property>
-                <property name="n_columns">5</property>
-                <child>
-                  <placeholder/>
-                </child>
-                <child>
-                  <placeholder/>
-                </child>
-                <child>
-                  <placeholder/>
-                </child>
-                <child>
-                  <placeholder/>
-                </child>
-                <child>
-                  <placeholder/>
-                </child>
+                <property name="n_columns">4</property>
                 <child>
                   <placeholder/>
                 </child>
