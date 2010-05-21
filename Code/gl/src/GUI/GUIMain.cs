@@ -27,8 +27,8 @@ public class GUIMain{
 	public static int maxPage = 1;
 	public static int maxTopics = 0;
 	public static CheckButton[] checkbuttony = new CheckButton[100];
-	
 	public static int iletematow = 0;
+	private bool maszDwaNoweKomponentyDoPoliczenia = false;
 
 	public GUIMain(){
 		Glade.XML gxml = new Glade.XML("../../src/GUI/Glade/ekranglowny.glade", "MainWindow", null);
@@ -191,24 +191,18 @@ public class GUIMain{
 				}
 				j++;
 			}
-	
-		/*if(j == 0){ 
-			Gtk.MessageDialog msgDialog = new Gtk.MessageDialog(null, 
-			                                                	DialogFlags.DestroyWithParent, 
-                                  								MessageType.Info,
-                                  								ButtonsType.Ok, 
-			                                                	"Nie zaznaczono żadnego tematu");
-			msgDialog.Run();
-			msgDialog.Destroy();
-		}*/	
 		loadTopics();
 	}
 	
 	private void OnPressEditTopicEvent(object o, EventArgs e){
-		int zaznaczony = -1, indeks1 = 0, indeks2 = 0;	
+		int zaznaczony = -1, indeks1 = 0, indeks2 = 0, offset = 0;	
 		Gtk.Widget[] dzieci = TopicTable.Children;
+		Gtk.Entry nazwaTmp = null, katTmp = null;
 		
-		
+		if (maszDwaNoweKomponentyDoPoliczenia)
+			offset = 12;
+		else
+			offset = 10;
 		
 		for(int i = 0; i < maxTopics; i++)
 			if(checkbuttony[i].Active)
@@ -220,25 +214,27 @@ public class GUIMain{
 
 		zaznaczony %= 5;
 		switch (zaznaczony){
-			case 0:	indeks1 = 25;
+			case 0:	indeks1 = dzieci.Length - offset;
 					break;
-			case 1:	indeks1 = 19;
+			case 1:	indeks1 = dzieci.Length - offset - 6;
 					break;
-			case 2:	indeks1 = 13;
+			case 2:	indeks1 = dzieci.Length - offset - 12;
 					break;
-			case 3:	indeks1 = 7;
+			case 3:	indeks1 = dzieci.Length - offset - 18;
 					break;
-			case 4:	indeks1 = 1;
+			case 4:	indeks1 = dzieci.Length - offset - 24;
 					break;
 		}
 		
 		indeks2 = indeks1 + 4;
-		
-		Gtk.Entry nazwaTmp = new Gtk.Entry(((Gtk.Label)dzieci[indeks2 - 1]).Text);
-		Gtk.Entry katTmp = new Gtk.Entry(((Gtk.Label)dzieci[indeks1]).Text);
-		Console.WriteLine(indeks1);
+		//Console.WriteLine(zaznaczony + " " + indeks1 + " " + indeks2 + " " + dzieci.Length);
+		//Console.WriteLine(dzieci[indeks2 - 1].ToString() + " " + dzieci[indeks1].ToString());
+		//Console.WriteLine(indeks1);
 	
 		if (EditTopic.Label == "OK"){
+			
+			maszDwaNoweKomponentyDoPoliczenia = false;
+			
 			if (Proxy.getInstance().canDoQuery("UPDATE", UserList.getInstance().current().status)){
 				string lista = " Subjects SET Topic=\'";
 				lista += ((Gtk.Entry)dzieci[1]).Text + "\', Cathegory=\'";
@@ -250,10 +246,7 @@ public class GUIMain{
 				Proxy.getInstance().blad("UPDATE");
 				return;
 			}
-			
-			//tu dostaje jakieś gtk_critical, ale się program nie wywala
-			TopicTable.Remove(nazwaTmp);
-			TopicTable.Remove(katTmp);
+
 			Gtk.MessageDialog msgDialog = new Gtk.MessageDialog(null, 
 				                                                DialogFlags.DestroyWithParent, 
             	                      							MessageType.Info,
@@ -264,22 +257,26 @@ public class GUIMain{
 			EditTopic.Label = "Edytuj temat";
 			loadTopics();
 			
-		prevPage.Visible  = true;
-		nextPage.Visible  = true;
-		DeleteTopic.Visible = true;
-		AddTopic.Visible = true;
-			
+			prevPage.Visible  = true;
+			nextPage.Visible  = true;
+			DeleteTopic.Visible = true;
+			AddTopic.Visible = true;
 			
 			return;
 		}
 		
 		if (EditTopic.Label == "Edytuj temat"){
 			
-		prevPage.Visible  = false;
-		nextPage.Visible  = false;
-		DeleteTopic.Visible = false;
-		AddTopic.Visible = false;
-
+			nazwaTmp = new Gtk.Entry(((Gtk.Label)dzieci[indeks2 - 1]).Text);
+			katTmp = new Gtk.Entry(((Gtk.Label)dzieci[indeks1]).Text);
+			
+			prevPage.Visible  = false;
+			nextPage.Visible  = false;
+			DeleteTopic.Visible = false;
+			AddTopic.Visible = false;
+			
+			//po dodaniu dwóch Gtk.Entry się sypie, to jest zabezpieczenie
+			maszDwaNoweKomponentyDoPoliczenia = true;
 			
 			EditTopic.Label = "OK";
 			//dzieci są wyświetlane od tyłu
