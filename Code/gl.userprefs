@@ -3,16 +3,16 @@
   <MonoDevelop.Ide.DebuggingService>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService>
-  <MonoDevelop.Ide.Workbench ActiveDocument="gl/src/GUI/GUILogin.cs" ctype="Workbench">
+  <MonoDevelop.Ide.Workbench ActiveDocument="gl/src/DBQuery.cs" ctype="Workbench">
     <Files>
-      <File FileName="gl/src/Main.cs" Line="7" Column="30" />
-      <File FileName="gl/src/GUI/GUIMain.cs" Line="237" Column="28" />
+      <File FileName="gl/src/Main.cs" Line="1" Column="1" />
+      <File FileName="gl/src/GUI/GUIMain.cs" Line="1" Column="1" />
       <File FileName="gl/src/GUI/GUILogin.cs" Line="73" Column="4" />
-      <File FileName="gl/src/DBQuery.cs" Line="32" Column="28" />
-      <File FileName="gl/src/GUI/GUIAddTopic.cs" Line="111" Column="4" />
-      <File FileName="gl/src/Proxy.cs" Line="17" Column="30" />
-      <File FileName="gl/src/TopicList.cs" Line="20" Column="60" />
-      <File FileName="gl/src/GUI/GUIAbout.cs" Line="19" Column="3" />
+      <File FileName="gl/src/DBQuery.cs" Line="35" Column="22" />
+      <File FileName="gl/src/GUI/GUIAddTopic.cs" Line="1" Column="1" />
+      <File FileName="gl/src/Proxy.cs" Line="1" Column="1" />
+      <File FileName="gl/src/TopicList.cs" Line="1" Column="1" />
+      <File FileName="gl/src/GUI/GUIAbout.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -20,9 +20,8 @@
           <Node name="gl" expanded="True">
             <Node name="References" expanded="True" />
             <Node name="src" expanded="True">
-              <Node name="GUI" expanded="True">
-                <Node name="GUILogin.cs" selected="True" />
-              </Node>
+              <Node name="GUI" expanded="True" />
+              <Node name="DBQuery.cs" selected="True" />
             </Node>
           </Node>
         </State>

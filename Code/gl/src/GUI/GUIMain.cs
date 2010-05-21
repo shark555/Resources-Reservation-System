@@ -208,6 +208,8 @@ public class GUIMain{
 		int zaznaczony = -1, indeks1 = 0, indeks2 = 0;	
 		Gtk.Widget[] dzieci = TopicTable.Children;
 		
+		
+		
 		for(int i = 0; i < maxTopics; i++)
 			if(checkbuttony[i].Active)
 				zaznaczony = i;
@@ -261,10 +263,24 @@ public class GUIMain{
 			msgDialog.Destroy();
 			EditTopic.Label = "Edytuj temat";
 			loadTopics();
+			
+		prevPage.Visible  = true;
+		nextPage.Visible  = true;
+		DeleteTopic.Visible = true;
+		AddTopic.Visible = true;
+			
+			
 			return;
 		}
 		
 		if (EditTopic.Label == "Edytuj temat"){
+			
+		prevPage.Visible  = false;
+		nextPage.Visible  = false;
+		DeleteTopic.Visible = false;
+		AddTopic.Visible = false;
+
+			
 			EditTopic.Label = "OK";
 			//dzieci są wyświetlane od tyłu
 			//5 ostatnich widgetów - nazwy kolumn
