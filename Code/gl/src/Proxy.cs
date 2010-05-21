@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using MySql.Data.MySqlClient;
+using Gtk;
 
 public class Proxy{
 		
@@ -13,8 +14,8 @@ public class Proxy{
 		mapaDostepu = new Dictionary<string, int>();
 		mapaDostepu.Add("SELECT", 0);
 		mapaDostepu.Add("INSERT", 0);
-		mapaDostepu.Add("UPDATE", 1);
-		mapaDostepu.Add("DELETE", 1);
+		mapaDostepu.Add("UPDATE", 0);
+		mapaDostepu.Add("DELETE", 0);
 		mapaDostepu.Add("CREATE", 2);
 		mapaDostepu.Add("DROP", 2);
 		mapaDostepu.Add("GRANT", 2);
@@ -33,13 +34,23 @@ public class Proxy{
 		instance = this;	
 	}
 	
-	private bool canDoQuery(string query, int poziomUprawnien){
+	public bool canDoQuery(string query, int poziomUprawnien){
 		
-		if (mapaDostepu[query] >= poziomUprawnien)
+		if (mapaDostepu[query] <= poziomUprawnien)
 			return true;
 		else 
 			return false;
 	}
 	
 	public static Proxy getInstance(){	return instance;}
+	
+	public void blad(string query){
+		Gtk.MessageDialog msgDialog = new Gtk.MessageDialog(null, 
+				                                                DialogFlags.DestroyWithParent, 
+            	                      							MessageType.Warning,
+                	                  							ButtonsType.Ok, 
+			        	                                        "Brak uprawnień do wykonania operacji: " + query + "!");
+		msgDialog.Run();
+		msgDialog.Destroy();
+	}
 }

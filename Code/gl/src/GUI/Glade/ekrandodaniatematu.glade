@@ -67,8 +67,8 @@
             <property name="day">20</property>
           </widget>
           <packing>
-            <property name="x">17</property>
-            <property name="y">183</property>
+            <property name="x">18</property>
+            <property name="y">253</property>
           </packing>
         </child>
         <child>
@@ -82,8 +82,8 @@
             <property name="day">20</property>
           </widget>
           <packing>
-            <property name="x">313</property>
-            <property name="y">183</property>
+            <property name="x">316</property>
+            <property name="y">252</property>
           </packing>
         </child>
         <child>
@@ -94,8 +94,8 @@
             <property name="label" translatable="yes">Termin realizacji:</property>
           </widget>
           <packing>
-            <property name="x">16</property>
-            <property name="y">124</property>
+            <property name="x">19</property>
+            <property name="y">180</property>
           </packing>
         </child>
         <child>
@@ -106,8 +106,8 @@
             <property name="label" translatable="yes">Od:</property>
           </widget>
           <packing>
-            <property name="x">16</property>
-            <property name="y">154</property>
+            <property name="x">20</property>
+            <property name="y">223</property>
           </packing>
         </child>
         <child>
@@ -119,7 +119,7 @@
           </widget>
           <packing>
             <property name="x">315</property>
-            <property name="y">154</property>
+            <property name="y">224</property>
           </packing>
         </child>
         <child>
@@ -155,8 +155,33 @@
             </child>
           </widget>
           <packing>
-            <property name="x">193</property>
-            <property name="y">362</property>
+            <property name="x">197</property>
+            <property name="y">441</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="GtkLabel" id="catLabel">
+            <property name="width_request">76</property>
+            <property name="height_request">20</property>
+            <property name="visible">True</property>
+            <property name="label" translatable="yes">Kategoria:</property>
+          </widget>
+          <packing>
+            <property name="x">7</property>
+            <property name="y">120</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="GtkEntry" id="catEntry">
+            <property name="width_request">506</property>
+            <property name="height_request">26</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="invisible_char">&#x25CF;</property>
+          </widget>
+          <packing>
+            <property name="x">89</property>
+            <property name="y">118</property>
           </packing>
         </child>
       </widget>

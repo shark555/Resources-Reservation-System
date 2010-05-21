@@ -70,7 +70,7 @@ public class GUILogin{
                                   								MessageType.Error,
                                   								ButtonsType.Ok, 
 			                                                    "Błędne logowanie!");
-			int res = msgDialog.Run();
+			msgDialog.Run();
 			login.Text = "";
 			password.Text = "";
 			msgDialog.Destroy();
