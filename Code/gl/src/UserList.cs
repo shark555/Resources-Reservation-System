@@ -1,18 +1,13 @@
 using System;
-using System.Collections.Generic;
 using System.Data;
 
-public class UserList : IteratorUserList{
+public class UserList : IteratorDefinedHere<User>{
 		
 	static private UserList instance = null;
-	private int curPos;
-	private List<User> lista;
 	
 	public UserList(){
 		instance = this;
 		//dodanie do listy aktualnych użytkowników z bazy
-		lista = new List<User>();
-		curPos = 0;
 		string args = " * FROM Users";
 		IDataReader reader = DBQuery.createQuery("SELECT", args);
 		while (reader.Read()){
@@ -65,47 +60,6 @@ public class UserList : IteratorUserList{
 	}
 	
 	static public UserList getInstance(){	return instance;}
-	
-	//z interfejsu iteratora
-	public int getCurrentIndex(){
-		return curPos;
-	}
-	
-	public User next(){
-		if (curPos + 1 > lista.Count - 1)
-			return null;
-		else{
-			curPos++;
-			return lista[curPos];
-		}
-	}
-	
-	public User prev(){
-		if (curPos - 1 < 0)
-			return null;
-		else{
-			curPos--;
-			return lista[curPos];
-		}
-	}
-	
-	public User head(){
-		curPos = 0;
-		return lista[0];
-	}
-	
-	public User current(){
-		return lista[curPos];
-	}
-	
-	public User tail(){
-		curPos = lista.Count - 1;
-		return lista[lista.Count - 1];
-	}
-	
-	public User getByIndex(int index){
-		return lista[index];
-	}
 	
 	public int changeStatus(int index, int newState){
 		lista[index].status = newState;

@@ -44,24 +44,22 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="src\Admin.cs" />
     <Compile Include="src\DBQuery.cs" />
     <Compile Include="src\Iterator.cs" />
-    <Compile Include="src\IteratorTopicList.cs" />
-    <Compile Include="src\IteratorUserList.cs" />
     <Compile Include="src\Main.cs" />
     <Compile Include="src\Proxy.cs" />
-    <Compile Include="src\Student.cs" />
     <Compile Include="src\Topic.cs" />
     <Compile Include="src\TopicList.cs" />
     <Compile Include="src\User.cs" />
     <Compile Include="src\UserList.cs" />
-    <Compile Include="src\Wykladowca.cs" />
-    <Compile Include="src\Zegar.cs" />
     <Compile Include="src\GUI\GUIAbout.cs" />
     <Compile Include="src\GUI\GUIAddTopic.cs" />
     <Compile Include="src\GUI\GUILogin.cs" />
     <Compile Include="src\GUI\GUIMain.cs" />
+    <Compile Include="src\IteratorDefinedHere.cs" />
+    <Compile Include="src\GUI\GUIMainAdmin.cs" />
+    <Compile Include="src\GUI\GUIMainWykladowca.cs" />
+    <Compile Include="src\Memento.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

@@ -1,18 +1,14 @@
 using System;
-using System.Collections.Generic;
 using System.Data;
 
-public class TopicList : IteratorTopicList{
+public class TopicList : IteratorDefinedHere<Topic>{
 	
 	static private TopicList instance = null;
-	private int curPos;
-	private List<Topic> lista;
 	
 	public TopicList(){
-		lista = new List<Topic>();
-		curPos = 0;
 		instance = this;
 	}
+	
 	//jeśli mamy usera reservedBy, to w bazie odpowiada on id = 1
 	public int addTopic(Topic addMe){
 		lista.Add(addMe);
@@ -20,6 +16,7 @@ public class TopicList : IteratorTopicList{
 		string userImie = addMe.author.Substring(addMe.author.IndexOf(' ') + 1);
 		string userID = "";
 		string reservedByID = "";
+		//int status = 0;
 		
 		//pobranie id użytkownika
 		string param = " * FROM Users WHERE Imie=";
@@ -108,48 +105,13 @@ public class TopicList : IteratorTopicList{
 
 	static public TopicList getInstance(){	return instance;}
 	
-	//z interfejsu iteratora
-	public int getCurrentIndex(){
-		return curPos;
+	//zapisuje obecny temat do memento
+	public Memento saveToMemento(Topic saveMe){
+		return new Memento(saveMe);
 	}
 	
-	public Topic next(){
-		if (curPos + 1 > lista.Count - 1)
-			return null;
-		else{
-			curPos++;
-			return lista[curPos];
-		}
-	}
-	
-	public Topic prev(){
-		if (curPos - 1 < 0)
-			return null;
-		else{
-			curPos--;
-			return lista[curPos];
-		}
-	}
-	
-	public Topic head(){
-		curPos = 0;
-		return lista[0];
-	}
-	
-	public Topic current(){
-		return lista[curPos];
-	}
-	
-	public Topic tail(){
-		curPos = lista.Count - 1;
-		return lista[lista.Count - 1];
-	}
-	
-	//zwraca null, jeśli index jest poza zakresem 0 - lista.Count
-	public Topic getByIndex(int index){
-		if (index > 0 && index < lista.Count)
-			return lista[index];
-		else
-			return null;
+	//pobiera temat z memento i zapisuje go do bazy
+	public void restoreFromMemento(Memento mem){
+		addTopic(mem.getOstatni());
 	}
 }

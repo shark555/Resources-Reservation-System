@@ -50,6 +50,16 @@ public class GUILogin{
 	private void setEvents(){
 		OKButton.Clicked += OnPressButtonOKEvent;
 		CancelButton.Clicked += OnPressButtonCancelEvent;
+		LoginWindow.KeyPressEvent += HandleKeyPressEvent;
+	}
+
+	//nie wiem, gdzie jest enter
+	private void HandleKeyPressEvent(object o, KeyPressEventArgs args){
+		switch(args.Event.Key){
+			case Gdk.Key.Escape:	CancelButton.Click();
+									break;
+			default:	break;
+		}
 	}
 	
 	// Connect the Signals defined in Glade
@@ -61,8 +71,17 @@ public class GUILogin{
 	private void OnPressButtonOKEvent(object o, EventArgs e){
 		if (checkLogin()){
 			LoginWindow.Destroy();
-			new GUIMain();
-			//new GUIAddTopic();
+			switch (UserList.getInstance().current().status) {
+				//student
+				case 0:	new GUIMain();
+						break;
+				//wykladowca
+				case 1:	new GUIMainWykladowca();
+						break;
+				//admin
+				case 2:	new GUIMainAdmin();
+						break;
+			}
 		}else{
 			//informacja o błędnym logowaniu
 			Gtk.MessageDialog msgDialog = new Gtk.MessageDialog(null, 

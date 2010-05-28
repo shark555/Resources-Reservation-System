@@ -3,16 +3,23 @@
   <MonoDevelop.Ide.DebuggingService>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService>
-  <MonoDevelop.Ide.Workbench ActiveDocument="gl/src/DBQuery.cs" ctype="Workbench">
+  <MonoDevelop.Ide.Workbench ActiveDocument="gl/src/GUI/GUIMain.cs" ctype="Workbench">
     <Files>
-      <File FileName="gl/src/Main.cs" Line="1" Column="1" />
-      <File FileName="gl/src/GUI/GUIMain.cs" Line="1" Column="1" />
-      <File FileName="gl/src/GUI/GUILogin.cs" Line="73" Column="4" />
-      <File FileName="gl/src/DBQuery.cs" Line="35" Column="22" />
-      <File FileName="gl/src/GUI/GUIAddTopic.cs" Line="1" Column="1" />
-      <File FileName="gl/src/Proxy.cs" Line="1" Column="1" />
-      <File FileName="gl/src/TopicList.cs" Line="1" Column="1" />
+      <File FileName="gl/src/Main.cs" Line="15" Column="33" />
+      <File FileName="gl/src/GUI/GUIMain.cs" Line="9" Column="25" />
+      <File FileName="gl/src/GUI/GUILogin.cs" Line="59" Column="33" />
+      <File FileName="gl/src/DBQuery.cs" Line="31" Column="25" />
+      <File FileName="gl/src/GUI/GUIAddTopic.cs" Line="114" Column="53" />
+      <File FileName="gl/src/Proxy.cs" Line="15" Column="32" />
+      <File FileName="gl/src/TopicList.cs" Line="101" Column="16" />
       <File FileName="gl/src/GUI/GUIAbout.cs" Line="1" Column="1" />
+      <File FileName="gl/src/Topic.cs" Line="14" Column="25" />
+      <File FileName="gl/src/Iterator.cs" Line="12" Column="1" />
+      <File FileName="gl/src/IteratorDefinedHere.cs" Line="10" Column="31" />
+      <File FileName="gl/src/UserList.cs" Line="6" Column="42" />
+      <File FileName="gl/src/GUI/GUIMainAdmin.cs" Line="2" Column="1" />
+      <File FileName="gl/src/GUI/GUIMainWykladowca.cs" Line="29" Column="1" />
+      <File FileName="gl/src/Memento.cs" Line="3" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -20,8 +27,9 @@
           <Node name="gl" expanded="True">
             <Node name="References" expanded="True" />
             <Node name="src" expanded="True">
-              <Node name="GUI" expanded="True" />
-              <Node name="DBQuery.cs" selected="True" />
+              <Node name="GUI" expanded="True">
+                <Node name="GUIMain.cs" selected="True" />
+              </Node>
             </Node>
           </Node>
         </State>

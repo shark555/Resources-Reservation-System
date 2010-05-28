@@ -17,18 +17,24 @@ public class GUIMain{
 		Button DeleteTopic;
 	[Glade.Widget]
 		Button EditTopic;
+	[Glade.Widget]
+		Fixed fixed1;
+	//MEMENTO
+	//dodać guzik cofający zmiany (usuwanie, cofanie)
+	//w jego akcji uruchomić metodę TopicList.restoreFromMemento(Memento);
+	//obiekty typu Memento można trzymać w liście -> cofanie do dowolnego stanu poprzedniego
 	
 	public static Label pageLabel;
 	public static Table TopicTable;
-	private Button nextPage;
-	private Button prevPage;
+	protected Button nextPage;
+	protected Button prevPage;
 	public static int lastTableIndex = 0;
-	public static int page = 1;
-	public static int maxPage = 1;
+	public static int page = 0;
+	public static int maxPage = 0;
 	public static int maxTopics = 0;
 	public static CheckButton[] checkbuttony = new CheckButton[100];
 	public static int iletematow = 0;
-	private bool maszDwaNoweKomponentyDoPoliczenia = false;
+	protected bool maszDwaNoweKomponentyDoPoliczenia = false;
 
 	public GUIMain(){
 		Glade.XML gxml = new Glade.XML("../../src/GUI/Glade/ekranglowny.glade", "MainWindow", null);
@@ -38,13 +44,18 @@ public class GUIMain{
 		prevPage = (Gtk.Button)gxml.GetWidget("prevPage");
 		nextPage = (Gtk.Button)gxml.GetWidget("nextPage");
 		pageLabel = (Gtk.Label)gxml.GetWidget("pageLabel");
+		
 		setEvents();
 		loadTopics();
-		
-		HelloLabel.Text = "Witaj, " + UserList.getInstance().current().imie;
+	}
+	
+	protected void addWidget(Gtk.Widget addMe, int posX, int posY){
+		fixed1.Put(addMe, posX, posY);
+		addMe.Show();
 	}
 
-	private void setEvents(){
+	protected void setEvents(){
+		HelloLabel.Text = "Witaj, " + UserList.getInstance().current().imie;
 		m_quit.ButtonPressEvent += OnPressMenuQuitEvent;
 		m_about.ButtonPressEvent += OnPressMenuAboutEvent;
 		AddTopic.Clicked += OnPressAddTopicEvent;
@@ -56,6 +67,10 @@ public class GUIMain{
 	
 	public static void loadTopics(){
 		if (Proxy.getInstance().canDoQuery("SELECT", UserList.getInstance().current().status)){
+			
+			//MEMENTO
+			//MainClass.a_topicList = new TopicList();
+			
 			string userID = "1";
 			uint curTop = 1, curBot = 2;
 			string param = " * FROM Users WHERE Imie=";
@@ -105,6 +120,10 @@ public class GUIMain{
 					dataOdLabel = new Label(reader["DateFrom"].ToString());
 					dataDoLabel = new Label(reader["DateTo"].ToString());
 					kategoriaLabel = new Label(reader["Cathegory"].ToString());
+					
+					//MEMENTO
+					//tutaj trzeba dodać tematy do TopicList
+					//przy każdym ładowaniu, instancja TopicList musi być null na początku
 			
 					TopicTable.Attach(idLabelTmp, 0, 1, curTop, curBot);
 					TopicTable.Attach(nazwaLabel, 1, 2, curTop, curBot);
@@ -140,20 +159,20 @@ public class GUIMain{
 	}
 }
 	// Connect the Signals defined in Glade
-	private void OnWindowDeleteEvent(object sender, DeleteEventArgs a){
+	protected void OnWindowDeleteEvent(object sender, DeleteEventArgs a){
 		Application.Quit();
 		a.RetVal = true;
 	}
 	
-	private void OnPressMenuQuitEvent(object o, EventArgs e){
+	protected void OnPressMenuQuitEvent(object o, EventArgs e){
 		OnWindowDeleteEvent(this, new DeleteEventArgs());
     }
 	
-	private void OnPressMenuAboutEvent(object o, EventArgs e){
+	protected void OnPressMenuAboutEvent(object o, EventArgs e){
 		new GUIAbout();
     }
 	
-	private void OnPressAddTopicEvent(object o, EventArgs e){
+	protected void OnPressAddTopicEvent(object o, EventArgs e){
 		if (Proxy.getInstance().canDoQuery("SELECT", UserList.getInstance().current().status) && Proxy.getInstance().canDoQuery("INSERT", UserList.getInstance().current().status))
 			new GUIAddTopic();
 		else{
@@ -162,21 +181,21 @@ public class GUIMain{
 		}
     }
 	
-	private void OnPressNextPageEvent(object o, EventArgs e){
+	protected void OnPressNextPageEvent(object o, EventArgs e){
 		if (page < maxPage){
 			page++;
 		}
 		loadTopics();
 	}
 	
-	private void OnPressPrevPageEvent(object o, EventArgs e){
+	protected void OnPressPrevPageEvent(object o, EventArgs e){
 		if (page > 1){
 			page--;
 		}
 		loadTopics();
 	}
 	
-	private void OnPressDeleteTopicEvent(object o, EventArgs e){
+	protected void OnPressDeleteTopicEvent(object o, EventArgs e){
 		int j = 0;	
 	
 		for(int i = 0; i < maxTopics; i++)
@@ -185,6 +204,13 @@ public class GUIMain{
 					String param = " FROM Subjects WHERE ID=" + checkbuttony[i].Name;
 					IDataReader reader = DBQuery.createQuery("DELETE", param);
 					DBQuery.CloseReader(reader);
+				
+					//MEMENTO
+					/*param = " * FROM Subjects WHERE ID=" + checkbuttony[i].Name;
+					reader = DBQuery.createQuery("SELECT", param);
+					if (reader.Read())
+						TopicList.getInstance().saveToMemento(TopicList.getInstance().getByIndex(TopicList.getInstance().searchTopic(reader["Topic"].ToString())));
+					DBQuery.CloseReader(reader);*/
 				}else{
 					Proxy.getInstance().blad("DELETE");
 					return;
@@ -194,7 +220,7 @@ public class GUIMain{
 		loadTopics();
 	}
 	
-	private void OnPressEditTopicEvent(object o, EventArgs e){
+	protected void OnPressEditTopicEvent(object o, EventArgs e){
 		int zaznaczony = -1, indeks1 = 0, indeks2 = 0, offset = 0;	
 		Gtk.Widget[] dzieci = TopicTable.Children;
 		Gtk.Entry nazwaTmp = null, katTmp = null;
@@ -227,9 +253,6 @@ public class GUIMain{
 		}
 		
 		indeks2 = indeks1 + 4;
-		//Console.WriteLine(zaznaczony + " " + indeks1 + " " + indeks2 + " " + dzieci.Length);
-		//Console.WriteLine(dzieci[indeks2 - 1].ToString() + " " + dzieci[indeks1].ToString());
-		//Console.WriteLine(indeks1);
 	
 		if (EditTopic.Label == "OK"){
 			
@@ -279,11 +302,6 @@ public class GUIMain{
 			maszDwaNoweKomponentyDoPoliczenia = true;
 			
 			EditTopic.Label = "OK";
-			//dzieci są wyświetlane od tyłu
-			//5 ostatnich widgetów - nazwy kolumn
-			//checkboxy mają indeksy = wielokrotności 6
-			//labele do edycji są na indeksach: indeks1 ... indeks2
-			//Console.WriteLine(zaznaczony + " " + (dzieci[indeks1]).ToString() + " ... " + (dzieci[indeks2]).ToString());
 			
 			nazwaTmp.WidthChars = 10;
 			katTmp.WidthChars = 10;
